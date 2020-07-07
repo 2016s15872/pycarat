@@ -31,7 +31,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 4,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -40,7 +40,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 5,
    "metadata": {},
    "outputs": [
     {
@@ -57,7 +57,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 6,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -66,7 +66,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 7,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -77,7 +77,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -93,7 +93,80 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Transformation Pipeline and Model Sucessfully Loaded\n"
+     ]
+    }
+   ],
+   "source": [
+    "deployment_28042020 = load_model('deployment_28042020')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[Pipeline(memory=None,\n",
+       "          steps=[('dtypes',\n",
+       "                  DataTypes_Auto_infer(categorical_features=[],\n",
+       "                                       display_types=True, features_todrop=[],\n",
+       "                                       ml_usecase='classification',\n",
+       "                                       numerical_features=[], target='diagnosis',\n",
+       "                                       time_features=[])),\n",
+       "                 ('imputer',\n",
+       "                  Simple_Imputer(categorical_strategy='not_available',\n",
+       "                                 numeric_strategy='mean',\n",
+       "                                 target_variable=None)),\n",
+       "                 ('new_levels1',\n",
+       "                  New_Catagorical_...\n",
+       "                 ('group', Empty()), ('nonliner', Empty()), ('scaling', Empty()),\n",
+       "                 ('P_transform', Empty()), ('pt_target', Empty()),\n",
+       "                 ('binn', Empty()), ('rem_outliers', Empty()),\n",
+       "                 ('cluster_all', Empty()),\n",
+       "                 ('dummy', Dummify(target='diagnosis')),\n",
+       "                 ('fix_perfect', Remove_100(target='diagnosis')),\n",
+       "                 ('clean_names', Clean_Colum_Names()),\n",
+       "                 ('feature_select', Empty()), ('fix_multi', Empty()),\n",
+       "                 ('dfs', Empty()), ('pca', Empty())],\n",
+       "          verbose=False),\n",
+       " XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,\n",
+       "               colsample_bynode=1, colsample_bytree=0.9, gamma=0,\n",
+       "               learning_rate=0.66, max_delta_step=0, max_depth=60,\n",
+       "               min_child_weight=1, missing=nan, n_estimators=600, n_jobs=-1,\n",
+       "               nthread=None, objective='binary:logistic', random_state=4256,\n",
+       "               reg_alpha=0, reg_lambda=1, scale_pos_weight=1, seed=None,\n",
+       "               silent=None, subsample=0.5, verbosity=0)]"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "deployment_28042020"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": []
