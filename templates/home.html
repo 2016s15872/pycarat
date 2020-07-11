@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnosis of Breast Cancer</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+<div Class="login">
+
+	<h1>Diagnosis of Breast Cancer</h1>
+
+<!-- Form to enter new data for classification -->
+
+<form action="{{ url_for('predict')}}"method="POST">
+
+	<input type="text" name="area_worst" placeholder="area_worst" required="required"/><br>
+	<input type="text" name="concave points_mean" placeholder="concave points_mean" required="required"/><br>
+	<input type="text" name="texture_worst" placeholder="texture_worst" required="required"/><br>
+	<input type="text" name="concave points_worst" placeholder="concave points_worst" required="required"/><br>
+	<input type="text" name="perimeter_worst" placeholder="perimeter_worst" required="required"/><br>
+	<input type="text" name="'area_se" placeholder="'area_se" required="required"/><br>
+	<input type="text" name="symmetry_worst" placeholder="symmetry_worst" required="required"/><br>
+	<input type="text" name="concavity_worst" placeholder="concavity_worst" required="required"/><br>
+	<input type="text" name="texture_mean" placeholder="texture_mean" required="required"/><br>
+	<input type="text" name="'compactness_se" placeholder="'compactness_se" required="required"/><br>
+
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+
+ <br>
+   <br>
+   {{pred}}
+   
+ </div>
+
+</body>
+</html>
